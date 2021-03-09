@@ -5,6 +5,7 @@ Robby ilhami Mulyadi
 Hafidh Zuhdi
 -------------
 
+<<<<<<< HEAD
 Tampaknya Dudley mendapatkan komputer baru yang diinginkannya, belum lagi
 televisi baru, dan sepeda balap.
 Kenapa persisnya Dudley ingin scpeda balap, sungguh suatu misteri bagi Harry, karena
@@ -13,3 +14,15 @@ kecuali, tentu saja, bentuk olahraganya adalah meninju orang lain. Kantong-tinju
 Dudley adalah Harry, tetapi Dudley
 jarang berhasil mengenainya. Harry memang tidak kelihatan gesit, tetapi dia gesit
 sekali.
+=======
+Harry pastilah sudah potong rambut lebih sering dibanding seluruh teman sekelasnya
+sekligus. Tetapi sama saja, rambutnya tetap saja tumbuh begitu—berantakan.
+Harry sedang menggoreng telur ketika Dudley muncul di dapur dengan ibunya. Dudley
+mirip sekali dengan Paman Vernon. Wajahnya lebar dan merah jambu, lehernya pendek,
+matanya kecil, biru, berair. Rambutnya yang tebal pirang menempel rapi pada
+kepalanya yang gemuk. Bibi Petunia sering mengatakan bahwa Dudley kelihatan seperti bayi
+malaikat,
+'sedangkan Harry sering mengatakan Dudley seperti babi pakai wig.
+Harry menaruh piring berisi daging dan telur ke atas meja. Ini susah, karena nyaris tak
+ada tempat. Dudley, sementara itu, menghitung hadiahnya. Wajahnya langsung cemberut.
+>>>>>>> 3d88859d8ebb739d908297006e4fcd5c5eda96a5
