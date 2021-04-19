@@ -17,6 +17,9 @@ use App\Http\Controllers\cashierController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Authentication
+Auth::routes();
+
     // admin
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
