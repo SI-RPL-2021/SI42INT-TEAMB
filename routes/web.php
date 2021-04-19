@@ -26,8 +26,16 @@ Auth::routes();
     Route::get('/dashboard', [adminController::class , 'index'])->name('admin.dashboard');
     Route::get('/dashboard/search', [adminController::class , 'indexsearch'])->name('admin.dashboard');
 
-    // admin
+    //admin product feature
+
+    Route::get('/products' , [adminController::class , 'products'])->name('admin.products');
+    Route::get('/products/search/' , [adminController::class , 'productssearch'])->name('admin.productssearch');
+    Route::get('/products/add' , [adminController::class , 'productsadd'])->name('admin.addproducts');
+
+    // admin user feature
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
+
+    
 
     });

@@ -34,6 +34,40 @@ class adminController extends Controller
         return view('admin.dashboard' , ['today'=>$today , 'purchase'=>$purhcase , 'purchases' => $purhcases,'cancel'=>$cancel]);
     }
 
+    public function products(){
+        $data = Products::all();
+        $hitung = Products::all();
+        $purhcases = purchase::all();
+        return view('admin.products' , ['data' => $data , 'hitung' =>$hitung ,'purchases'=>$purhcases]);
+    }
+
+    public function productsadd(){
+        return view('admin.productsadd');
+    }
+    public function productsadds(Request $request){
+        $data = new Products();
+        $data->name  = $request->name;
+        $data->category = $request->category;
+        $data->price = $request->price;
+        $data->quantity = $request->quantity;
+        $data->description = $request->description;
+
+        $imageName = time().'.'.$request->gambar->extension();
+        $request->gambar->move(public_path('products/'), $imageName);
+        $data->gambar = $imageName;
+
+        $data->save();
+        return redirect(route('admin.products'));
+    }
+
+    public function productssearch(Request $request){
+        $data = Products::where('name', 'LIKE',"%{$request->search}%")->paginate();
+        $hitung = Products::all();
+        $purhcases = purchase::all();
+
+        return view('admin.products' , ['data' => $data , 'hitung'=>$hitung , 'purchases'=>$purhcases]);
+    }
+    
     public function usersadd(){
         return view('admin.usersadd');
     }
