@@ -101,31 +101,31 @@
 
                         </li>
 
-                        <li class="nav-item">
-                            @if(request()->is('admin/users'))
-                            <a href="{{route('admin.users')}}" class="nav-link active">
+                        
+                        
 
-                                <img src="{{asset('logo/userac.png')}}" alt="" width="30px">
-                                Users
-                            </a>
-                            @else
-                                <a href="{{route('admin.users')}}" class="nav-link">
 
-                                    <img src="{{asset('logo/user.png')}}" alt="" width="30px">
-                                    Users
-                                </a>
-                                @endif
 
-                        </li>
+
+
+
+
+
+
+
+
+
+
+                        
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('editprof') }}">
-                                    Edit profile
-                                </a>
+                                
+
+
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
