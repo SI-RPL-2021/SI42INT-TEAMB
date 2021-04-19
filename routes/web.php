@@ -20,7 +20,14 @@ use App\Http\Controllers\cashierController;
 //Authentication
 Auth::routes();
 
+    // dashboard admin
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::prefix('admin')->group(function (){
+    Route::get('/dashboard', [adminController::class , 'index'])->name('admin.dashboard');
+    Route::get('/dashboard/search', [adminController::class , 'indexsearch'])->name('admin.dashboard');
+
     // admin
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
 
+    });
