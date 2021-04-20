@@ -32,10 +32,14 @@ Auth::routes();
     Route::get('/products/search/' , [adminController::class , 'productssearch'])->name('admin.productssearch');
     Route::get('/products/add' , [adminController::class , 'productsadd'])->name('admin.addproducts');
 
+    //admin edit products feature
+    Route::get('/products/edit/{id}' , [adminController::class , 'productsedit'])->name('admin.productedits');
+    Route::post('/products/edit/{id}' , [adminController::class , 'productsedits'])->name('admin.productedits');
+
     // admin user feature
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
 
-    
+
 
     });
