@@ -90,6 +90,26 @@ class adminController extends Controller
         return redirect(route('admin.products'));
     }
 
+
+    public function users(){
+        $admin = User::all()->where('role','admin');
+        $cashier = User::all()->where('role' , 'cashier');
+        $data = User::all();
+        return view('admin.users', ['admin' => $admin , 'cashier'=> $cashier ,'data'=>$data]);
+    }
+    public function userstheme($theme){
+        $admin = User::all()->where('role','admin');
+        $cashier = User::all()->where('role' , 'cashier');
+        $data = User::all()->where('role',$theme);
+        return view('admin.users', ['admin' => $admin , 'cashier'=> $cashier ,'data'=>$data]);
+    }
+    public function usersearch(Request $request){
+
+        $admin = User::all()->where('role','admin');
+        $cashier = User::all()->where('role' , 'cashier');
+        $data = User::where('name', 'LIKE' , "%$request->search%")->paginate();
+        return view('admin.users', ['admin' => $admin , 'cashier'=> $cashier ,'data'=>$data]);
+    }
     public function usersadd(){
         return view('admin.usersadd');
     }
