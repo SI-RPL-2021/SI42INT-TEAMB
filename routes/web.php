@@ -38,6 +38,7 @@ Auth::routes();
 
     // admin user feature
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
+    Route::post('/users/usersadd' , [RegisterController::class , 'addusers'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
 
 
