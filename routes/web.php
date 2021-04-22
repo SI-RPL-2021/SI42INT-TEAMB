@@ -39,6 +39,9 @@ Auth::routes();
     // admin user feature
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');
     Route::get('/users/remove/{id}' , [adminController::class , 'usersremove'])->name('admin.userremove');
+    Route::get('/users' , [adminController::class , 'users'])->name('admin.users');
+    Route::get('/users/{theme}' , [adminController::class , 'userstheme'])->name('admin.userstheme');
+    Route::post('/users/search/' , [adminController::class , 'usersearch'])->name('admin.userssearch');
 
 
 
