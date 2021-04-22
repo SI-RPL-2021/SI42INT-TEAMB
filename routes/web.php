@@ -31,8 +31,7 @@ Auth::routes();
     Route::get('/products' , [adminController::class , 'products'])->name('admin.products');
     Route::get('/products/search/' , [adminController::class , 'productssearch'])->name('admin.productssearch');
     Route::get('/products/add' , [adminController::class , 'productsadd'])->name('admin.addproducts');
-
-    //admin edit products feature
+    Route::post('/products/add' , [adminController::class , 'productsadds'])->name('admin.addproducts');
     Route::get('/products/edit/{id}' , [adminController::class , 'productsedit'])->name('admin.productedits');
     Route::post('/products/edit/{id}' , [adminController::class , 'productsedits'])->name('admin.productedits');
 
