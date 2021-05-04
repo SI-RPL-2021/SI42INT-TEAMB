@@ -17,6 +17,15 @@ use App\Http\Controllers\cashierController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+//Customer
+
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::get('/index', [guestController::class , 'index'])->name('index');
+Route::post('/index', [guestController::class , 'indexsearch'])->name('indexsearch');
+
 //Authentication
 Auth::routes();
 
