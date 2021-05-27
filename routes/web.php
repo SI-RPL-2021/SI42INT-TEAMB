@@ -25,6 +25,10 @@ Route::get('/', function () {
 });
 Route::get('/index', [guestController::class , 'index'])->name('index');
 Route::post('/index', [guestController::class , 'indexsearch'])->name('indexsearch');
+Route::post('/cart/{id}' , [guestController::class , 'cart'])->name('addcart');
+Route::get('/cart' , [guestController::class , 'cartindex'])->name('cart');
+Route::get('/cartcout' , [guestController::class, 'checkout'])->name('cartcout');
+
 
 //Authentication
 Auth::routes();

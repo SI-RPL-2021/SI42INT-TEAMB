@@ -20,5 +20,42 @@ class guestController extends Controller
         $data = Products::where('name', 'LIKE',"%{$request->search}%")->paginate();
         return view('index' , ['data'=>$data]);
     }
+    public function cart($id , Request $request){
+        $data = new cart();
+        $data->quantity = $request->quantity;
+        $data->product_id = $id;
+        $data->save();
+        return redirect()->back();
+    }
+
+    public function cartindex(){
+        $data = cart::all();
+        return view('cart' , ['data'=> $data]);
+    }
+
+    public function checkout(){
+        $data = cart::all();
+        $tes = request_order::latest()->first();
+        $x = 0;
+        if ($tes == null){
+            $x = 1;
+        } else{
+            $x = $tes->id + 1;
+        }
+
+        foreach($data as $d){
+            $request = new request_order();
+            $request->quantity = $d->quantity;
+            $request->product_id = $d->product_id;
+            $request->status = "Ready To Process";
+            $request->recipt = $x ;
+            $request->save();
+            $d->delete();
+        }
+//
+
+        return redirect('/cart')->with('recipt',$x);
+    }
+    
 
 }
