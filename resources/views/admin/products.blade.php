@@ -72,7 +72,7 @@
                         <th>Category</th>
                         <th>Qty in storage</th>
                         <th>Price/Unit</th>
-                        <th>ACtion</th>
+                        <th>Action</th>
                     </tr>
                     @foreach($data as $d)
                     <tr class="" style="margin-top: 200px">
