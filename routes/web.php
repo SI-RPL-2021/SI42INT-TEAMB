@@ -52,6 +52,9 @@ Auth::routes();
     Route::get('/users/{theme}' , [adminController::class , 'userstheme'])->name('admin.userstheme');
     Route::post('/users/search/' , [adminController::class , 'usersearch'])->name('admin.userssearch');
 
+    
 
-
+    });
+    Route::prefix('cashier')->group(function(){
+        Route::get('/detail/{id}/{req}' , [cashierController::class , 'detail'])->name('cashier.detail');
     });
