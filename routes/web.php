@@ -59,6 +59,15 @@ Auth::routes();
     
 
     });
+    
+    Route::prefix('storage')->group(function (){
+        Route::get('/ready-proc' , [storageController::class , 'ready'])->name('storage.ready');
+        Route::get('/ready-proc/{id}' , [storageController::class , 'readys'])->name('storage.readys');
+        Route::get('/ready-proc/{id}/post' , [storageController::class , 'progres'])->name('storage.progres');
+        Route::get('/in-prog' , [storageController::class , 'inprogres'])->name('storage.proces');
+        Route::get('/in-prog/{id}' , [storageController::class , 'inprogress'])->name('storage.process');
+        Route::get('/in-prog/{id}/post/{price}/{qty}' , [storageController::class , 'cashier'])->name('storage.cashier');
+    });
     Route::prefix('cashier')->group(function(){
         Route::get('/index' , [cashierController::class , 'index'])->name('cashier.index');
         Route::get('/delete/{id}' , [cashierController::class , 'delete'])->name('cashier.delete');
