@@ -60,5 +60,9 @@ Auth::routes();
 
     });
     Route::prefix('cashier')->group(function(){
+        Route::get('/index' , [cashierController::class , 'index'])->name('cashier.index');
+        Route::get('/delete/{id}' , [cashierController::class , 'delete'])->name('cashier.delete');
         Route::get('/detail/{id}/{req}' , [cashierController::class , 'detail'])->name('cashier.detail');
+        Route::post('/post/{id}/{req}' , [cashierController::class , 'post'])->name('cashier.post');
+        Route::get('/index/cart/search' , [cashierController::class, 'search']);
     });
