@@ -5,7 +5,13 @@
         <h2>Users</h2>
         <h3 class="h4 mt-4"> Monitoring</h3>
 
-
+        <div class="card rounded shadow p-3 " style="border-top: 15px solid #3A5488">
+            <div class="card-body">
+                <div class="row">
+                    <canvas class="col" id="pieChart" style="max-width:50%;height:350px;margin:auto;padding:2vw;"></canvas>
+                </div>
+            </div>
+        </div>
 
         <div class="row mt-5">
             <div class="col-md">
@@ -93,4 +99,43 @@
                 </table>
             </div>
         </div>
+        <script>
+        $(function(){
+            var data_admin = <?php echo json_encode($dataadmin); ?>;
+            var data_kasir = <?php echo json_encode($datakasir); ?>;
+            var data_stfgudang = <?php echo json_encode($datastfgudang); ?>;
+            var total = data_admin + data_kasir + data_stfgudang;
+            var labels = [
+                "Admin",
+                "Kasir",
+                "Staff Gudang",
+            ];
+            var data = [data_admin,
+                data_kasir,
+                data_stfgudang,];
+            var pie = $("#pieChart");
+            var myChart = new Chart(pie, {
+                type: 'pie',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            data: data,
+                            borderColor: ['rgba(75, 192, 192, 1)', 'rgba(192, 0, 0, 1)', 'rgba(60, 136, 20, 1)'],
+                            backgroundColor: ['rgba(75, 192, 192, 0.2)', 'rgba(192, 0, 0, 0.2)', 'rgba(60, 136, 20, 0.2)'],
+                        }
+                    ]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Users Portion',
+                        position: 'top',
+                        fontSize: 16,
+                        padding: 20
+                    },
+                }
+            });
+        });
+    </script>
 @endsection
