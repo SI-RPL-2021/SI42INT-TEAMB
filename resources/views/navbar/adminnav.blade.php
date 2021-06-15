@@ -11,7 +11,9 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js" integrity="sha512-vBmx0N/uQOXznm/Nbkp7h0P1RfLSj0HQrFSzV8m7rOGyj30fYAOKHYvCNez+yM8IrfnW0TCodDEjRqf6fodf/Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -101,7 +103,22 @@
 
                         </li>
 
-                        
+                        <li class="nav-item">
+                            @if(request()->is('admin/users'))
+                            <a href="{{route('admin.users')}}" class="nav-link active">
+
+                                <img src="{{asset('logo/userac.png')}}" alt="" width="30px">
+                                Users
+                            </a>
+                            @else
+                                <a href="{{route('admin.users')}}" class="nav-link">
+
+                                    <img src="{{asset('logo/user.png')}}" alt="" width="30px">
+                                    Users
+                                </a>
+                                @endif
+
+                        </li>
                         
 
 
