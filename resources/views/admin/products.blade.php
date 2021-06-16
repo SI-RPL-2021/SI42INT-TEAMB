@@ -83,7 +83,8 @@
                         <td>{{$d->category}}</td>
                         <td>{{$d->quantity}}</td>
                         <td>{{$d->price}}</td>
-                        <td><a href="/admin/products/edit/{{$d->id}}" class="btn btn-success">Edit</a></td>
+                        <td><a href="/admin/products/edit/{{$d->id}}" class="btn btn-success">Edit</a>
+                        <a href="/admin/products/remove/{{$d->id}}" class="btn btn-danger">Remove</a></td>
                     </tr>
                     @endforeach
 

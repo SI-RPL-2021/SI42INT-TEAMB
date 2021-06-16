@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\guestController;
 use App\Http\Controllers\storageController;
 use App\Http\Controllers\cashierController;
+use App\Http\Controllers\TransactionChartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,7 +29,8 @@ Route::post('/index', [guestController::class , 'indexsearch'])->name('indexsear
 Route::post('/cart/{id}' , [guestController::class , 'cart'])->name('addcart');
 Route::get('/cart' , [guestController::class , 'cartindex'])->name('cart');
 Route::get('/cartcout' , [guestController::class, 'checkout'])->name('cartcout');
-
+Route::get('/editprofile' , [guestController::class , 'editprof'])->name('editprof');
+Route::post('/editprofs' , [guestController::class , 'editprofs'])->name('editprofs');
 
 //Authentication
 Auth::routes();
@@ -47,6 +49,8 @@ Auth::routes();
     Route::post('/products/add' , [adminController::class , 'productsadds'])->name('admin.addproducts');
     Route::get('/products/edit/{id}' , [adminController::class , 'productsedit'])->name('admin.productedits');
     Route::post('/products/edit/{id}' , [adminController::class , 'productsedits'])->name('admin.productedits');
+    Route::get('/products/remove/{id}' , [adminController::class , 'productsremove'])->name('admin.productremove');
+
 
     // admin user feature
     Route::get('/usersadd' , [adminController::class , 'usersadd'])->name('admin.usersadd');

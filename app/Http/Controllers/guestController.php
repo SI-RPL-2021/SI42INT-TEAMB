@@ -15,11 +15,32 @@ class guestController extends Controller
         $data = Products::all();
         return view('index' , ['data'=>$data]);
     }
+    public function editprof(){
+        return view('editprofile');
+    }
+    public function editprofs(Request $request){
+        $data = Auth::user();
+        if (Hash::check($request->password , $data->password  ) ){
+           $data->username = $request->username;
+           if ($request->npassword){
+               $data->password = Hash::make($request->npassword);
+           }else{
+
+           }
+
+           $data->update();
+           return redirect(route('admin.users'));
+        }else{
+
+            return redirect()->back()->with('error','error');
+        }
+    }
 
     public function indexsearch(Request $request){
         $data = Products::where('name', 'LIKE',"%{$request->search}%")->paginate();
         return view('index' , ['data'=>$data]);
     }
+
     public function cart($id , Request $request){
         $data = new cart();
         $data->quantity = $request->quantity;
@@ -56,6 +77,4 @@ class guestController extends Controller
 
         return redirect('/cart')->with('recipt',$x);
     }
-    
-
 }

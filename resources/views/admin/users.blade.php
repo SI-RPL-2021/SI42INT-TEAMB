@@ -92,7 +92,8 @@
                         <td>{{$d->name}}</td>
                         <td>{{$d->username}}</td>
                         <td class="text-danger">offline</td>
-                        <td><a href="/admin/users/remove/{{$d->id}}" class="btn btn-danger">Remove</a></td>
+                        <td><a href="{{ route('editprof') }}" class="btn btn-success">Edit</a>
+                        <a href="/admin/users/remove/{{$d->id}}" class="btn btn-danger">Remove</a></td>
                     </tr>
                     @endforeach
 
