@@ -21,7 +21,7 @@
 </head>
 
 <body style="background-color: gray">
-<a href="#cart" style="position: fixed; right: 50px ; bottom: 50px" class="btn btn-success">Cart</a>
+<a href="{{route('cart')}}" style="position: fixed; right: 50px ; bottom: 50px" class="btn btn-success">Cart</a>
 
 <!-- Image and text -->
 <nav class="navbar navbar-light bg-light shadow">
